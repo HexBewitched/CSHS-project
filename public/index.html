@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Running App</title>
+</head>
+
+<body>
+
+    <h1>log yo mileage</h1>
+    <br>
+    <form id="mileageForm">
+        <label for="name">Name:</label><br>
+        <input type="text" id="name" name="name" required><br>
+            
+        <label for="date">Date:</label><br>
+        <input type="text" id="date" name="date" required><br>
+            
+        <label for="miles">Miles:</label><br>
+        <input type="text" id="miles" name="miles" required><br>
+            
+        <label for="notes">Notes:</label><br>
+        <input type="text" id="notes" name="notes"><br>
+                
+        <button type="submit">Submit</button>
+    </form>
+    
+    <script>
+            document.getElementById('mileageForm').addEventListener('submit', async function(e) {
+                e.preventDefault();
+
+                const data = {
+                    name: document.getElementById('name').value,
+                    date: document.getElementById('date').value,
+                    miles: document.getElementById('miles').value,
+                    notes: document.getElementById('notes').value
+                };
+
+                const response = await fetch('/submit-mileage', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(data)
+                });
+
+                const result = await response.json();
+                alert(result.message);
+            });
+        </script>
+</body>
+</html>
