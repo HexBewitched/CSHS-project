@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Log Mileage</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<div class="card">
+    <img class="logoCircle" src="assets/logoTM.png">
+    <h1>Log Mileage</h1>
+    <div class="subtitle">Track your run!</div>
+
+    <form id="mileageForm">
+        <div class="formGroup">
+            <label for="date">Date</label>
+            <input type="date" id="date" required />
+        </div>
+
+        <div class="formGroup">
+            <label for="miles">Miles</label>
+            <input type="number" id="miles" placeholder="Enter miles" required />
+        </div>  
+
+        <div class="formGroup">
+            <label for="notes">Notes (optional)</label>
+            <input type="text" id="notes" placeholder="Tempo, recovery, long run..." />
+        </div>
+
+        <button type="submit" class="submitButton">Log Run</button>
+    </form>
+
+    <div class="successMessage" id="successMessage">
+        Mileage logged!
+    </div>
+</div>
+
+    <script src="script.js"></script>
+</body>
+</html>
